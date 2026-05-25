@@ -1,6 +1,5 @@
-# Use this Blueprint to deploy n8n on Render as a web
-# service that uses Supabase Postgres to store
-# workflow data.
+# Database: AgentAutomation - n8n deployment
+# Connected to dedicated automation Supabase project
 services:
   - type: web
     plan: free
@@ -14,11 +13,11 @@ services:
       # encrypted with the previous value.
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-      # Supabase Postgres connection
+      # Automation Supabase Postgres connection
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: db.ycsbagliyruxtkgctykj.supabase.co
+        value: db.aozalxeizuxlhuwtopfi.supabase.co
       - key: DB_POSTGRESDB_PORT
         value: 5432
       - key: DB_POSTGRESDB_DATABASE
@@ -26,7 +25,7 @@ services:
       - key: DB_POSTGRESDB_USER
         value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        value: 4XKtZIAgIlwZ&!39
+        value: UxF*&TGqIylo$05u
       - key: DB_POSTGRESDB_SSL_ENABLED
         value: true
       # n8n host config
@@ -38,6 +37,5 @@ services:
         value: https
       - key: GENERIC_TIMEZONE
         value: America/New_York
-      # Keep-alive (prevents Render free tier cold starts)
       - key: N8N_RUNNERS_ENABLED
         value: true
