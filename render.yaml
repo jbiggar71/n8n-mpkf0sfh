@@ -1,5 +1,6 @@
-# Database: AgentAutomation - n8n deployment
+# AgentAutomation - n8n deployment
 # Connected to dedicated automation Supabase project
+
 services:
   - type: web
     plan: free
@@ -13,17 +14,17 @@ services:
       # encrypted with the previous value.
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-      # Automation Supabase Postgres connection
+      # Automation Supabase - Session Pooler (IPv4)
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
-        value: db.aozalxeizuxlhuwtopfi.supabase.co
+        value: aws-1-us-east-1.pooler.supabase.com
       - key: DB_POSTGRESDB_PORT
         value: 5432
       - key: DB_POSTGRESDB_DATABASE
         value: postgres
       - key: DB_POSTGRESDB_USER
-        value: postgres
+        value: postgres.aozalxeizuxlhuwtopfi
       - key: DB_POSTGRESDB_PASSWORD
         value: UxF*&TGqIylo$05u
       - key: DB_POSTGRESDB_SSL_ENABLED
